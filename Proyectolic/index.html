@@ -1,11 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto LIC</title>
+    <title>Convertidor de Divisas | Proyecto Fase 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+    <div class="lienzo">
+        <!-- Barra Lateral Completa-->
+        <aside class="costado">
+            <div class="marca">
+                <h1>Divisas</h1>
+            </div>
+            
+            <nav class="navegacion">
+                <ul class="lazos">
+                    <li><a href="#origen" class="toque activo">Inicio</a></li>
+                    <li><a href="#taller" class="toque">Convertidor</a></li>
+                    <li><a href="#huellas" class="toque">Historial</a></li>
+                    <li><a href="#voces" class="toque">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="perfil hondo">
+                <p><strong>Usuario</strong></p>
+                <p class="chico">En línea</p>
+            </div>
+        </aside>
+
+        <!-- Contenido-->
+        <main class="centro">
+            <section id="origen" class="molde">
+                <h2>¿Cómo utilizar este sitio?</h2>
+                <p>Bienvenido al convertidor de divisas. Esta herramienta te permite calcular el tipo de cambio entre 12 de las monedas más importantes del mundo en tiempo real. Solo debes ingresar la cantidad numérica, seleccionar tu moneda de origen y la moneda de destino.</p>
+                <p><strong>Monedas soportadas:</strong> USD, EUR, GBP, JPY, AUD, CAD, CHF, CNY, MXN, BRL, GTQ, SVC.</p>
+            </section>
+
+            <section id="taller" class="molde">
+                <h2>Calculadora de Divisas</h2>
+                
+                <div class="fragua">
+                    <div class="tanda">
+                        <label for="monto">Importe a convertir:</label>
+                        <input type="number" id="monto" class="hueco" placeholder="Ej. 100.00" min="0" step="0.01">
+                    </div>
+
+                    <div class="divisas">
+                        <div class="opcion">
+                            <label for="base">Tengo esta divisa:</label>
+                            <select id="base" class="hueco">
+                                <option value="USD" selected>Estados Unidos - Dólar (USD)</option>
+                                <option value="EUR">Eurozona - Euro (EUR)</option>
+                                <option value="GBP">Reino Unido - Libra (GBP)</option>
+                            </select>
+                        </div>
+
+                        <div class="eje">
+                            <button id="giro" class="aro">&#8644;</button>
+                        </div>
+
+                        <div class="opcion">
+                            <label for="meta">Quiero esta divisa:</label>
+                            <select id="meta" class="hueco">
+                                <option value="USD">Estados Unidos - Dólar (USD)</option>
+                                <option value="EUR" selected>Eurozona - Euro (EUR)</option>
+                                <option value="GBP">Reino Unido - Libra (GBP)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button id="forjar" class="fuerte">Convertir</button>
+                    
+                    <div class="fruto hondo">
+                        <p id="logro">0.00</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="huellas" class="molde">
+                <h2>Historial de Sesión</h2>
+                <div class="marco">
+                    <table class="tejido">
+                        <thead>
+                            <tr>
+                                <th>Importe Original</th>
+                                <th>De</th>
+                                <th>A</th>
+                                <th>Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="datos">
+                            <tr>
+                                <td>moneda</td>
+                                <td>pais</td>
+                                <td>pais</td>
+                                <td>modena</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <footer class="molde final">
+                <div id="manos">
+                    <h3>Desarrolladores</h3>
+                    <p>Davis Josue Sandoval Tobar</p>
+                    <p>Oscar Alejandro Paredes Alfaro</p>
+                </div>
+                <div id="voces">
+                    <h3>Contáctanos</h3>
+                    <p>soportedivisa@gmail.com</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
 </body>
 </html>
