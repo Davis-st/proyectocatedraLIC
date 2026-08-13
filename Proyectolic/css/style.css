@@ -1,0 +1,254 @@
+:root {
+    --fondo: #e0e5ec;
+    --texto: #33475b;
+    --suave: #7a8b9a;
+    --brillo: #00d2ff; 
+    
+    --luz: 9px 9px 16px rgb(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+    --sombra: inset 6px 6px 10px 0 rgba(163, 177, 198, 0.7), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    color: var(--texto);
+    margin-bottom: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--brillo);
+}
+
+p {
+    color: var(--suave);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.chico {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+/* Estructura Dashboard */
+.lienzo {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* Barra Lateral */
+.costado {
+    width: 260px;
+    height: calc(100vh - 40px); 
+    position: sticky;
+    top: 20px;
+    background-color: var(--fondo);
+    border-radius: 20px;
+    box-shadow: var(--luz);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.marca {
+    margin-bottom: 40px;
+}
+
+.navegacion {
+    flex-grow: 1; 
+}
+
+.lazos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Contenido Principal */
+.centro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Contenedores */
+.molde {
+    background-color: var(--fondo);
+    border-radius: 20px;
+    box-shadow: var(--luz);
+    padding: 30px;
+    width: 100%;
+}
+
+.hondo {
+    background-color: var(--fondo);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Botones e Inputs */
+.toque {
+    display: block;
+    padding: 15px 20px;
+    border-radius: 12px;
+    background-color: var(--fondo);
+    box-shadow: var(--luz);
+    transition: all 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 600;
+}
+
+.toque:active, .toque.activo {
+    box-shadow: var(--sombra);
+    color: var(--brillo);
+}
+
+.fuerte {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 25px 0;
+    border-radius: 12px;
+    background-color: var(--fondo);
+    box-shadow: var(--luz);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--brillo);
+    transition: 0.2s;
+}
+
+.fuerte:active {
+    box-shadow: var(--sombra);
+}
+
+.aro {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--fondo);
+    box-shadow: var(--luz);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--brillo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aro:active {
+    box-shadow: var(--sombra);
+}
+
+.hueco {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: var(--fondo);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    color: var(--texto);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* Convertidor */
+.fragua {
+    margin-top: 20px;
+}
+
+.tanda {
+    margin-bottom: 25px;
+}
+
+.divisas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.opcion {
+    flex: 1;
+}
+
+.fruto {
+    margin-top: 20px;
+}
+
+#logro {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--brillo);
+    margin: 0;
+}
+
+/* Historial */
+.marco {
+    overflow-x: auto;
+}
+
+.tejido {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tejido th, .tejido td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid var(--fondo);
+}
+
+.tejido th {
+    color: var(--brillo);
+    font-weight: 600;
+}
+
+.tejido tbody tr {
+    transition: 0.3s;
+}
+
+.tejido tbody tr:hover {
+    box-shadow: var(--luz);
+    border-radius: 10px;
+}
+
+/* Footer */
+.final {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 20px;
+}
+
+/* Responsivo: Pendiente */
