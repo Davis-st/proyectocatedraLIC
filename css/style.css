@@ -251,4 +251,127 @@ p {
     gap: 20px;
 }
 
-/* Responsivo: Pendiente */
+/* Responsivo: */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .lienzo {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .costado {
+        width: 100%;
+        height: auto;
+        position: relative; 
+        top: 0;
+        padding: 20px;
+    }
+
+    .marca {
+        margin-bottom: 20px;
+    }
+
+    .lazos {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .toque {
+        padding: 10px 20px; 
+    }
+
+    .perfil {
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+/* Para Celulares */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; 
+    }
+
+    .molde {
+        padding: 20px; 
+    }
+
+    .lazos {
+        gap: 10px;
+    }
+
+    .toque {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .divisas {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .eje {
+        display: flex;
+        justify-content: center;
+       
+        transform: rotate(90deg); 
+        margin: 5px 0;
+    }
+
+    #logro {
+        font-size: 24px; 
+    }
+
+    .final {
+        flex-direction: column; 
+        gap: 15px;
+    }
+}
+
+
+/*Tema de colores*/
+
+
+body:has(#tema-oscuro:checked) {
+    --fondo: #2b2f3a;  
+    --texto: #f4f6f8;  
+    --suave: #8b99a6;  
+    --brillo: #3fe2d3; 
+    --luz: 7px 7px 15px rgba(20, 23, 29, 0.9), -7px -7px 15px rgba(62, 68, 85, 0.5);
+    --sombra: inset 5px 5px 10px rgba(20, 23, 29, 0.9), inset -5px -5px 10px rgba(62, 68, 85, 0.5);
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body:has(#tema-auto:checked) {
+        --fondo: #2b2f3a;  
+        --texto: #f4f6f8;  
+        --suave: #8b99a6;  
+        --brillo: #3fe2d3; 
+        --luz: 7px 7px 15px rgba(20, 23, 29, 0.9), -7px -7px 15px rgba(62, 68, 85, 0.5);
+        --sombra: inset 5px 5px 10px rgba(20, 23, 29, 0.9), inset -5px -5px 10px rgba(62, 68, 85, 0.5);
+    }
+}
+
+
+body:has(#tema-oscuro:checked) .tejido th, 
+body:has(#tema-oscuro:checked) .tejido td {
+    border-bottom: 2px solid #1f222a;
+}
+@media (prefers-color-scheme: dark) {
+    body:has(#tema-auto:checked) .tejido th, 
+    body:has(#tema-auto:checked) .tejido td {
+        border-bottom: 2px solid #1f222a;
+    }
+}
+
+
+body:has(#tema-auto:checked) label[for="tema-auto"],
+body:has(#tema-claro:checked) label[for="tema-claro"],
+body:has(#tema-oscuro:checked) label[for="tema-oscuro"] {
+    box-shadow: var(--sombra);
+    color: var(--brillo);
+}
