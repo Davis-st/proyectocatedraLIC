@@ -7,6 +7,11 @@
     --luz: 9px 9px 16px rgb(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
     --sombra: inset 6px 6px 10px 0 rgba(163, 177, 198, 0.7), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.8);
 }
+h2
+{
+    text-align: center;
+}
+
 
 * {
     margin: 0;
@@ -20,30 +25,15 @@ body {
     color: var(--texto);
     padding: 20px;
     min-height: 100vh;
+    transition: 0.3s;
 }
 
-h1, h2, h3 {
-    color: var(--texto);
-    margin-bottom: 15px;
-}
+h1, h2, h3 { color: var(--texto); margin-bottom: 15px; }
+h1 { text-align: center; color: var(--brillo); }
+p { color: var(--suave); line-height: 1.6; margin-bottom: 15px; }
+.chico { font-size: 12px; margin-bottom: 0; }
 
-h1 {
-    text-align: center;
-    color: var(--brillo);
-}
-
-p {
-    color: var(--suave);
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.chico {
-    font-size: 12px;
-    margin-bottom: 0;
-}
-
-/* Estructura Dashboard */
+/* Dashboard */
 .lienzo {
     display: flex;
     gap: 30px;
@@ -53,7 +43,7 @@ p {
     align-items: flex-start;
 }
 
-/* Barra Lateral */
+/* Lateral */
 .costado {
     width: 260px;
     height: calc(100vh - 40px); 
@@ -65,17 +55,10 @@ p {
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
 }
 
-.marca {
-    margin-bottom: 40px;
-}
-
-.navegacion {
-    flex-grow: 1; 
-}
-
+.marca { margin-bottom: 40px; }
+.navegacion { flex-grow: 1; }
 .lazos {
     list-style: none;
     display: flex;
@@ -83,7 +66,51 @@ p {
     gap: 15px;
 }
 
-/* Contenido Principal */
+.perfil { margin-top: auto; }
+
+/* Menú Ajustes Flotante */
+.nodo { position: relative; }
+.flotante {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 15px;
+    background-color: var(--fondo);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: var(--luz);
+    text-align: center;
+    z-index: 100;
+}
+
+#ver:checked ~ .flotante { display: block; }
+
+/* Interruptor Tema */
+.riel {
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    background-color: var(--fondo);
+    box-shadow: var(--sombra);
+    border-radius: 13px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.rueda {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--brillo);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Centro */
 .centro {
     flex: 1;
     display: flex;
@@ -121,12 +148,10 @@ p {
     text-decoration: none;
     color: var(--texto);
     font-weight: 600;
+    text-align: center;
 }
 
-.toque:active, .toque.activo {
-    box-shadow: var(--sombra);
-    color: var(--brillo);
-}
+.toque:active { box-shadow: var(--sombra); color: var(--brillo); }
 
 .fuerte {
     display: block;
@@ -144,9 +169,7 @@ p {
     transition: 0.2s;
 }
 
-.fuerte:active {
-    box-shadow: var(--sombra);
-}
+.fuerte:active { box-shadow: var(--sombra); }
 
 .aro {
     width: 50px;
@@ -163,9 +186,7 @@ p {
     align-items: center;
 }
 
-.aro:active {
-    box-shadow: var(--sombra);
-}
+.aro:active { box-shadow: var(--sombra); }
 
 .hueco {
     width: 100%;
@@ -181,66 +202,33 @@ p {
 }
 
 /* Convertidor */
-.fragua {
-    margin-top: 20px;
-}
-
-.tanda {
-    margin-bottom: 25px;
-}
-
+.fragua { margin-top: 20px; }
+.tanda { margin-bottom: 25px; }
 .divisas {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 15px;
 }
+.opcion { flex: 1; }
+.fruto { margin-top: 20px; }
+#logro { font-size: 28px; font-weight: 600; color: var(--brillo); margin: 0; }
 
-.opcion {
-    flex: 1;
-}
-
-.fruto {
-    margin-top: 20px;
-}
-
-#logro {
-    font-size: 28px;
-    font-weight: 600;
-    color: var(--brillo);
-    margin: 0;
-}
-
-/* Historial */
-.marco {
-    overflow-x: auto;
-}
-
+/* Tabla */
+.marco { overflow-x: auto; }
 .tejido {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
 }
-
 .tejido th, .tejido td {
     padding: 15px;
     text-align: left;
     border-bottom: 2px solid var(--fondo);
 }
-
-.tejido th {
-    color: var(--brillo);
-    font-weight: 600;
-}
-
-.tejido tbody tr {
-    transition: 0.3s;
-}
-
-.tejido tbody tr:hover {
-    box-shadow: var(--luz);
-    border-radius: 10px;
-}
+.tejido th { color: var(--brillo); font-weight: 600; }
+.tejido tbody tr { transition: 0.3s; }
+.tejido tbody tr:hover { box-shadow: var(--luz); border-radius: 10px; }
 
 /* Footer */
 .final {
@@ -251,15 +239,9 @@ p {
     gap: 20px;
 }
 
-/* Responsivo: */
-
 /* Tablets */
 @media (max-width: 1024px) {
-    .lienzo {
-        flex-direction: column; 
-        gap: 20px;
-    }
-
+    .lienzo { flex-direction: column; gap: 20px; }
     .costado {
         width: 100%;
         height: auto;
@@ -267,75 +249,66 @@ p {
         top: 0;
         padding: 20px;
     }
+    .lazos { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .toque { padding: 10px 20px; }
+    .perfil { margin-top: 20px; width: 100%; }
+    .flotante { top: 100%; left: 0; margin-left: 0; margin-top: 15px; }
+}
 
-    .marca {
+/* Celulares */
+@media (max-width: 768px) {
+    body { padding: 10px; padding-bottom: 90px; }
+    
+    /* Limpia la cabecera para que no estorbe */
+    .costado {
+        padding: 0;
+        box-shadow: none;
+        background: transparent;
         margin-bottom: 20px;
     }
+    .marca { margin-bottom: 0; }
+    .perfil { display: none; }
 
+    /* Barra tipo pastilla */
     .lazos {
-        flex-direction: row; 
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        flex-wrap: nowrap;
+        background-color: var(--fondo);
+        border-radius: 50px; 
+        padding: 10px;
+        box-shadow: var(--luz);
+        z-index: 1000;
+        gap: 5px;
     }
 
-    .toque {
-        padding: 10px 20px; 
+    .lazos .toque {
+        padding: 10px 5px;
+        font-size: 11px;
+        box-shadow: none; 
+        border-radius: 30px;
+        flex: 1;
     }
 
-    .perfil {
-        margin-top: 20px;
-        width: 100%;
+    /* Menú hacia arriba en móvil */
+    .flotante {
+        top: auto;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 0;
+        margin-bottom: 15px;
     }
+
+    .divisas { flex-direction: column; gap: 20px; }
+    .eje { transform: rotate(90deg); margin: 5px 0; }
 }
 
-/* Para Celulares */
-@media (max-width: 768px) {
-    body {
-        padding: 10px; 
-    }
-
-    .molde {
-        padding: 20px; 
-    }
-
-    .lazos {
-        gap: 10px;
-    }
-
-    .toque {
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-
-    .divisas {
-        flex-direction: column; 
-        gap: 20px;
-    }
-
-    .eje {
-        display: flex;
-        justify-content: center;
-       
-        transform: rotate(90deg); 
-        margin: 5px 0;
-    }
-
-    #logro {
-        font-size: 24px; 
-    }
-
-    .final {
-        flex-direction: column; 
-        gap: 15px;
-    }
-}
-
-
-/*Tema de colores*/
-
-
-body:has(#tema-oscuro:checked) {
+/* Tema Oscuro */
+body:has(#modo:checked) {
     --fondo: #2b2f3a;  
     --texto: #f4f6f8;  
     --suave: #8b99a6;  
@@ -344,34 +317,11 @@ body:has(#tema-oscuro:checked) {
     --sombra: inset 5px 5px 10px rgba(20, 23, 29, 0.9), inset -5px -5px 10px rgba(62, 68, 85, 0.5);
 }
 
-
-@media (prefers-color-scheme: dark) {
-    body:has(#tema-auto:checked) {
-        --fondo: #2b2f3a;  
-        --texto: #f4f6f8;  
-        --suave: #8b99a6;  
-        --brillo: #3fe2d3; 
-        --luz: 7px 7px 15px rgba(20, 23, 29, 0.9), -7px -7px 15px rgba(62, 68, 85, 0.5);
-        --sombra: inset 5px 5px 10px rgba(20, 23, 29, 0.9), inset -5px -5px 10px rgba(62, 68, 85, 0.5);
-    }
+body:has(#modo:checked) .rueda {
+    transform: translateX(24px);
 }
 
-
-body:has(#tema-oscuro:checked) .tejido th, 
-body:has(#tema-oscuro:checked) .tejido td {
+body:has(#modo:checked) .tejido th, 
+body:has(#modo:checked) .tejido td {
     border-bottom: 2px solid #1f222a;
-}
-@media (prefers-color-scheme: dark) {
-    body:has(#tema-auto:checked) .tejido th, 
-    body:has(#tema-auto:checked) .tejido td {
-        border-bottom: 2px solid #1f222a;
-    }
-}
-
-
-body:has(#tema-auto:checked) label[for="tema-auto"],
-body:has(#tema-claro:checked) label[for="tema-claro"],
-body:has(#tema-oscuro:checked) label[for="tema-oscuro"] {
-    box-shadow: var(--sombra);
-    color: var(--brillo);
 }
