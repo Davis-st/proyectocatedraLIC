@@ -9,14 +9,11 @@
 </head>
 <body>
 
-    <input type="radio" name="tema" id="tema-auto" checked hidden>
-    <input type="radio" name="tema" id="tema-claro" hidden>
-    <input type="radio" name="tema" id="tema-oscuro" hidden>
+    <!-- Control del Tema (Interruptor) -->
+    <input type="checkbox" id="modo" hidden>
 
     <div class="lienzo">
-
-    <div class="lienzo">
-        <!-- Barra Lateral Completa-->
+        
         <aside class="costado">
             <div class="marca">
                 <h1>Divisas</h1>
@@ -28,32 +25,32 @@
                     <li><a href="#taller" class="toque">Convertidor</a></li>
                     <li><a href="#huellas" class="toque">Historial</a></li>
                     <li><a href="#voces" class="toque">Contacto</a></li>
+                    
+                    <!-- Botón de Ajustes con Interruptor -->
+                    <li class="nodo">
+                        <input type="checkbox" id="ver" hidden>
+                        <label for="ver" class="toque">Ajustes</label>
+                        
+                        <div class="flotante">
+                            <p class="chico">Tema Oscuro</p>
+                            <label for="modo" class="riel">
+                                <span class="rueda"></span>
+                            </label>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             
-
-            <div class="molde" style="margin-top: 20px;">
-
-    <p style="font-size: 13px; font-weight: bold; margin-bottom: 15px; color: var(--texto);">Tema De Colores:</p>
-    
-    <div style="display: flex; flex-direction: column; gap: 10px;">
-        <label for="tema-auto" class="toque chico" style="text-align: center;">Automático</label>
-        <label for="tema-claro" class="toque chico" style="text-align: center;">Claro</label>
-        <label for="tema-oscuro" class="toque chico" style="text-align: center;">Oscuro</label>
-    </div>
-        </div>
-
-            <div class="perfil hondo" style="margin-top: 20px";>
+            <div class="perfil hondo">
                 <p><strong>Usuario</strong></p>
                 <p class="chico">En línea</p>
             </div>
         </aside>
 
-        <!-- Contenido-->
         <main class="centro">
             <section id="origen" class="molde">
                 <h2>¿Cómo utilizar este sitio?</h2>
-                <p>"Bienvenido. Convierte 12 divisas en tiempo real con solo ingresar tu monto y seleccionar tus monedas de origen y destino."</p>
+                <p>Bienvenido. Convierte 12 divisas en tiempo real con solo ingresar tu monto y seleccionar tus monedas de origen y destino.</p>
                 <p><strong>Monedas soportadas:</strong> USD, EUR, GBP, JPY, AUD, CAD, CHF, CNY, MXN, BRL, GTQ, SVC.</p>
             </section>
 
